@@ -1,3 +1,4 @@
+package org.example;
 public class PerfectNumbers {
     public static void main(String[] args) {
         int count = 0;
