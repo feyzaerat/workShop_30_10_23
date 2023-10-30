@@ -1,23 +1,18 @@
 package org.example;
 
 public class Main {
-
     public static void main(String[] args) {
-        printFibonacciSeries(100);
-    }
+        int n = 15;
+        int firstNumber = 0;
+        int secondNumber = 1;
 
-    public static void printFibonacciSeries(int n) {
-        long[] fibonacciNumbers = new long[n];
-        fibonacciNumbers[0] = 0;
-        fibonacciNumbers[1] = 1;
+        System.out.println("Here is Fibonacci series till " + n + ":" );
 
-        for (int i = 2; i < n; i++) {
-            fibonacciNumbers[i] = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
-        }
-
-        System.out.println("The first " + n + " numbers in the Fibonacci series are:");
-        for (int i = 0; i < n; i++) {
-            System.out.print(fibonacciNumbers[i] + " ");
+        for(int i=1; i <= n; ++i){
+            System.out.print(firstNumber + ", ");
+            int nextNumber = firstNumber + secondNumber ;
+            firstNumber = secondNumber;
+            secondNumber = nextNumber;
         }
     }
 }
