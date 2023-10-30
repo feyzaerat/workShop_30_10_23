@@ -23,9 +23,9 @@ public class Main {
         }
 
         if(total == numberNormal){
-            System.out.println(numberStr + " is an Armstrong number");
+            System.out.println(numberStr + " is an Armstrong number ");
         } else{
-            System.out.println(numberStr + " is not an Armstrong number");
+            System.out.println(numberStr + " is not an Armstrong number ");
         }
 
 
