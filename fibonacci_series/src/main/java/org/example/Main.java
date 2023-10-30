@@ -16,5 +16,6 @@ public class Main {
             firstNumber = secondNumber;
             secondNumber = thirdNumber;
         }
+
     }
 }
