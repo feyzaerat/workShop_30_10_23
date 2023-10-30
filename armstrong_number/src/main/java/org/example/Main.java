@@ -15,7 +15,7 @@ public class Main {
         }
     }
 
-    // Bir sayının Armstrong sayısı olup olmadığını kontrol eden fonksiyon..
+    // Bir sayının Armstrong sayısı olup olmadığını kontrol eden fonksiyon
     static boolean isArmstrongNumber(int Number) {
         int toplam = 0;
         int tempNum = Number;
