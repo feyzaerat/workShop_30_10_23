@@ -1,25 +1,33 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Scanner;
 
 public class Main {
-    public static boolean hasUniqueCharacters(String str) {
-        Set<Character> charSet = new HashSet<>();
-        for (char c : str.toCharArray()) {
-            if (charSet.contains(c)) {
-                return false;
-            }
-            charSet.add(c);
-        }
-        return true;
-    }
-
     public static void main(String[] args) {
-        String str1 = "abcdefg";
-        String str2 = "hello";
 
-        System.out.println(hasUniqueCharacters(str1)); // true (all unique)
-        System.out.println(hasUniqueCharacters(str2)); // false (not all unique)
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter String: ");
+        String strOld = scanner.nextLine();
+        String str = strOld.toLowerCase();
+
+
+        boolean isUnique = true;
+
+        for(int i = 0; i < str.length(); i++) {
+            char c1 = str.charAt(i);
+            for(int y = i + 1; y < str.length(); y++) {
+                if(str.charAt(y)==c1) {
+                    isUnique = false;
+                    break;
+                }
+            }
+        }
+
+
+        if(isUnique) {
+            System.out.println("This string is UNIQUE");
+        }else {
+            System.out.println("This string is NOT UNIQUE");
+        }
     }
 }
