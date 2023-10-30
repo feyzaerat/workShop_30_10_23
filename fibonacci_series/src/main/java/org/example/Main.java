@@ -13,7 +13,7 @@ public class Main {
             fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
         }
 
-        System.out.println("Fibonacci Serisinin ilk 100 Sayısı:");
+        System.out.println("Fibonacci Serisinin ilk 100 Sayısı");
         for (int i = 0; i < n; i++) {
             System.out.print(fibonacciSeries[i] + " ");
         }
