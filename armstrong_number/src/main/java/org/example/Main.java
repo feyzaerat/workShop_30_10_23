@@ -1,43 +1,33 @@
 package org.example;
 
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number: ");
+        System.out.print("Bir sayı girin: ");
         int number = scanner.nextInt();
         scanner.close();
 
         if (isArmstrongNumber(number)) {
-            System.out.println(number + " is an Armstrong number.");
+            System.out.println(number + " bir Armstrong sayısıdır.");
         } else {
-            System.out.println(number + " is not an Armstrong number.");
+            System.out.println(number + " bir Armstrong sayısı değildir.");
         }
     }
 
-    public static boolean isArmstrongNumber(int number) {
-        int originalNumber, remainder, result = 0;
-        int n = 0;
+    // Bir sayının Armstrong sayısı olup olmadığını kontrol eden fonksiyon
+    static boolean isArmstrongNumber(int Number) {
+        int toplam = 0;
+        int tempNum = Number;
+        int numOfDigits = String.valueOf(Number).length();
 
-        originalNumber = number;
-
-        // Sayıdaki basamak sayısını yaz
-        while (originalNumber != 0) {
-            originalNumber /= 10;
-            n++;
+        while (tempNum != 0) {
+            int digit = tempNum % 10;
+            toplam += Math.pow(digit, numOfDigits);
+            tempNum /= 10;
         }
 
-        originalNumber = number;
-
-        // Rakamların n'inci kuvvetlerinin toplamını hesapla
-        while (originalNumber != 0) {
-            remainder = originalNumber % 10;
-            result += Math.pow(remainder, n);
-            originalNumber /= 10;
-        }
-
-        // Sonucun orijinal sayıya eşit olup olmadığını kontrol et
-        return result == number;
+        return toplam == Number;
     }
+
 }
