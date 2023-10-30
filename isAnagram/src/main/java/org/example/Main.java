@@ -10,7 +10,7 @@ public class armstrongNumberChecker {
         scanner.close();
 
         if (isArmstrongNumber(number)) {
-            System.out.println(number + " is an Armstrong number.");
+            System.out.println(number + " is an Armstrong number..");
         } else {
             System.out.println(number + " is not an Armstrong number.");
         }
