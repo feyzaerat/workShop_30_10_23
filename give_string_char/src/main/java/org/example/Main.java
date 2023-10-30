@@ -1,32 +1,31 @@
 package org.example;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String input = "Tobeto";
-        countAndPrintCharacterCounts(input);
-    }
 
-    public static void countAndPrintCharacterCounts(String input) {
-        // Karakter sayımlarını depolamak için bir HashMap oluştur
-        HashMap<Character, Integer> charCountMap = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Word: ");
+        String word = scanner.nextLine();
 
-        // Giriş dizesini küçük harfe dönüştür
-        input = input.toLowerCase();
+        String wordNew = word.toLowerCase();
+        Map<Character, Integer> charsAndValues = new HashMap<>();
 
-        // Dizedeki karakterler arasında yineleme
-        for (char c : input.toCharArray()) {
-            if (Character.isLetter(c)) {
-                // Only count letters, not other characters
-                charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        for(int i = 0; i < wordNew.length(); i++){
+            char c = wordNew.charAt(i);
+            if (charsAndValues.containsKey(c)){
+                charsAndValues.put(c, charsAndValues.get(c)+1);
+            }else{
+                charsAndValues.put(c, 1);
             }
         }
 
-        // Karakter sayılarını yazdır
-        for (char c : charCountMap.keySet()) {
-            System.out.println(c + ":" + charCountMap.get(c));
+        for (Map.Entry<Character, Integer> character : charsAndValues.entrySet()) {
+            System.out.println(character.getKey() + " --> " + character.getValue());
         }
+
     }
 }
-
