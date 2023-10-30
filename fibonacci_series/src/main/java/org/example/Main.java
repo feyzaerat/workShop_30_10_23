@@ -10,7 +10,6 @@ public class Main {
         System.out.println("1. --> " + firstNumber);
         System.out.println("2. --> " + secondNumber);
 
-
         for(int i = 3; i<=100; i++) {
             long thirdNumber = firstNumber + secondNumber;
             System.out.println((i) + ". --> " + thirdNumber);
