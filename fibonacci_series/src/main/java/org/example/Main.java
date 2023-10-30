@@ -6,7 +6,7 @@ public class Main {
         int firstNumber = 0;
         int secondNumber = 1;
 
-        System.out.println("There is Fibonacci series till " + n + ":" );
+        System.out.println("Here is Fibonacci series till " + n + ":" );
 
         for(int i=1; i <= n; ++i){
             System.out.print(firstNumber + ", ");
