@@ -1,32 +1,32 @@
 package org.example;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int count = 0;
-        long number = 1;
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Please enter the number you wonder if it is a perfect number : ");
+        System.out.println("--------------------------------------------------------------");
 
-        System.out.println("The first 10 perfect numbers are:");
 
-        while (count < 10) {
-            if (isPerfect(number)) {
-                System.out.println(number);
-                count++;
-            }
-            number++;
-        }
-    }
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        int sum = 0;
 
-    public static boolean isPerfect(long num) {
-        long sum = 1;
-
-        for (long i = 2; i * i <= num; i++) {
-            if (num % i == 0) {
-                sum += i;
-                if (i != num / i) {
-                    sum += num / i;
-                }
+        for(int i = 1; i < number; i++ ){
+            if(number % i == 0){
+                sum = sum + i;
             }
         }
+        if(sum == number){
+            System.out.println("--------------------------------------------------------------");
+            System.out.println("RESULT : " + number + " is a perfect number... ");
+            System.out.println("--------------------------------------------------------------");
+        }else{
+            System.out.println("--------------------------------------------------------------");
+            System.out.println("RESULT : " + number + " is not a perfect number!!! ");
+            System.out.println("--------------------------------------------------------------");
+        }
 
-        return sum == num;
     }
 }
