@@ -1,6 +1,6 @@
 package org.example;
 
-public class amicablePairs {
+public class Main {
 
     public static void main(String[] args) {
         int pairCount = 0;
