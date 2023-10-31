@@ -3,7 +3,7 @@ package org.example;
 import java.util.HashSet;
 import java.util.Set;
 
-public class uniqueCharactersChecker {
+public class Main {
     public static boolean hasUniqueCharacters(String str) {
         Set<Character> charSet = new HashSet<>();
         for (char c : str.toCharArray()) {
