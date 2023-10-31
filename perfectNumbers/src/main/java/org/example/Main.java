@@ -1,5 +1,5 @@
 package org.example;
-public class PerfectNumbers {
+public class Main {
     public static void main(String[] args) {
         int count = 0;
         long number = 1;
