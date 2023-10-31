@@ -1,43 +1,43 @@
 package org.example;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class armstrongNumberChecker {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int number = scanner.nextInt();
-        scanner.close();
+    public class Main {
+        public static void main(String[] args) {
 
-        if (isArmstrongNumber(number)) {
-            System.out.println(number + " is an Armstrong number..");
-        } else {
-            System.out.println(number + " is not an Armstrong number.");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter first string: ");
+            String str1Old = scanner.nextLine();
+            System.out.println("Enter second string: ");
+            String str2Old = scanner.nextLine();
+
+            String s1 = str1Old.trim();
+            String s2 = str2Old.trim();
+
+            String str1 = s1.toLowerCase();
+            String str2 = s2.toLowerCase();
+
+            char[] str1Array = new char[str1.length()];
+            char[] str2Array = new char[str2.length()];
+
+            for(int i = 0; i < str1.length(); i++) {
+                char c1 = str1.charAt(i);
+                str1Array[i] = c1;
+            }
+
+            for(int i = 0; i < str2.length(); i++) {
+                char c2 = str2.charAt(i);
+                str2Array[i] = c2;
+            }
+
+            Arrays.sort(str1Array);
+            Arrays.sort(str2Array);
+
+            if(Arrays.equals(str1Array, str2Array)) {
+                System.out.println(str1Old + " and "+ str2Old + " are ANAGRAMS of each other");
+            }else {
+                System.out.println(str1Old + " and "+ str2Old + " are NOT ANAGRAMS of each other");
+            }
         }
     }
 
-    public static boolean isArmstrongNumber(int number) {
-        int originalNumber, remainder, result = 0;
-        int n = 0;
-
-        originalNumber = number;
-
-        // Sayıdaki basamak sayısını yaz
-        while (originalNumber != 0) {
-            originalNumber /= 10;
-            n++;
-        }
-
-        originalNumber = number;
-
-        // Rakamların n'inci kuvvetlerinin toplamını hesapla
-        while (originalNumber != 0) {
-            remainder = originalNumber % 10;
-            result += Math.pow(remainder, n);
-            originalNumber /= 10;
-        }
-
-        // Sonucun orijinal sayıya eşit olup olmadığını kontrol et
-        return result == number;
-    }
-}
